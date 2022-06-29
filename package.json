@@ -1,0 +1,35 @@
+{
+  "name": "botnance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "swc src -d dist",
+    "clean": "rm -rf dist",
+    "dev": "concurrently \"npm run watch-compile\" \"npm run watch-dev\"",
+    "start": "NODE_ENV=production node --es-module-specifier-resolution=node dist/index.js",
+    "watch-compile": "swc src -w --out-dir dist",
+    "watch-dev": "nodemon --es-module-specifier-resolution=node --watch \"dist/**/*\" -e js ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "Yusef Habib",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.206",
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "concurrently": "^7.2.2",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "nodemon": "^2.0.18",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  }
+}

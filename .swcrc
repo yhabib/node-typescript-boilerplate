@@ -1,0 +1,16 @@
+{
+  "sourceMaps": true,
+  "jsc": {
+    "baseUrl": "./",
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false,
+      "decorators": false,
+      "dynamicImport": false
+    },
+    "paths": {
+      "@core/*": ["src/core/*"]
+    },
+    "target": "es2020"
+  }
+}
